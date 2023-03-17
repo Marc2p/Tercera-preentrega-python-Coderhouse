@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Inicio</h1>
+<p>Esta es la biblioteca creada para el proyecto final del curso de Python de Coderhouse</p>
+<h2>Contenido disponible</h2>
+<p>Por el momento contamos con el siguiente contenido disponible:</p>
+<ul>
+	<li>Libros: {{ cantidad_de_libros }}</li>
+	<li>Autores: {{ cantidad_de_autores }}</li>
+</ul>
+<hr><h2>Busca un libro</h2>
+<form action="{% url 'BuscarLibro' %}" >
+	{{ buscar_libro.as_p }}
+	<input type="submit" value="Buscar">
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Libro: {{ libro.titulo }}</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Título</th>
+				<th>Autor</th>
+				<th>Idioma</th>
+				<th>Fecha de publicación</th>
+				<th>Género</th>
+				<th>Sinopsis</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ libro.titulo }}</td>
+				<td>{{ libro.autor }}</td>
+				<td>{{ libro.idioma }}</td>
+				<td>{{ libro.fecha_publicacion }}</td>
+				<td>{{ libro.genero.all|join:", " }}</td>
+				<td>{{ libro.sinopsis }}</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de libros</h1>
+{% if paginador %}
+	<table>
+		<thead>
+			<tr>
+				<th>Titulo</th>
+				<th>Autor</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for libro in paginador %}
+				<tr>
+					<td><a href="{%url 'libro' libro.id%}">{{ libro.titulo }}</a></td>
+					<td>{{ libro.autor }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>No hay libros registrados</p>
+{% endif %}
+{% endblock %}

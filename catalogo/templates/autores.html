@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de autores</h1>
+{% if paginador %}
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Libros disponibles</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for autor in paginador %}
+				<tr>
+					<td>{{ autor.nombre }}</td>
+					<td>{{ autor.apellido }}</td>
+					<td><a href="{% url 'autor' autor.id %}">{{ autor.get_libros.count }}</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>No hay autores disponibles por ahora</p>
+{% endif %}
+{% endblock %}
