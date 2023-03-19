@@ -2,26 +2,30 @@
 
 {% block content %}
 	<h1>Libros de: {{ autor }}</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>Título</th>
-				<th>Idioma</th>
-				<th>Fecha de publicación</th>
-				<th>Género</th>
-				<th>Sinopsis</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for libro in paginador %}
+	{% if paginador %}
+		<table>
+			<thead>
 				<tr>
-					<td>{{ libro.titulo }}</td>
-					<td>{{ libro.idioma }}</td>
-					<td>{{ libro.fecha_publicacion }}</td>
-					<td>{{ libro.genero.all|join:", " }}</td>
-					<td>{{ libro.sinopsis }}</td>
+					<th>Título</th>
+					<th>Idioma</th>
+					<th>Fecha de publicación</th>
+					<th>Género</th>
+					<th>Sinopsis</th>
 				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{% for libro in paginador %}
+					<tr>
+						<td>{{ libro.titulo }}</td>
+						<td>{{ libro.idioma }}</td>
+						<td>{{ libro.fecha_publicacion }}</td>
+						<td>{{ libro.genero.all|join:", " }}</td>
+						<td>{{ libro.sinopsis }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>Aún no tenemos libros de {{ autor }}</p>
+	{% endif %}
 {% endblock %}

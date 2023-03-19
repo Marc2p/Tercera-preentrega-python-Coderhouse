@@ -9,9 +9,4 @@
 	<li>Libros: {{ cantidad_de_libros }}</li>
 	<li>Autores: {{ cantidad_de_autores }}</li>
 </ul>
-<hr><h2>Busca un libro</h2>
-<form action="{% url 'BuscarLibro' %}" >
-	{{ buscar_libro.as_p }}
-	<input type="submit" value="Buscar">
-</form>
 {% endblock %}

@@ -16,7 +16,7 @@
 				<tr>
 					<td>{{ autor.nombre }}</td>
 					<td>{{ autor.apellido }}</td>
-					<td><a href="{% url 'autor' autor.id %}">{{ autor.get_libros.count }}</a></td>
+					<td>{% if autor.get_libros.count == 0 %} {{ autor.get_libros.count }} {% else %} <a href="{% url 'autor' autor.id %}">{{ autor.get_libros.count }}</a> {% endif %}</a></td>
 				</tr>
 			{% endfor %}
 		</tbody>

@@ -5,6 +5,14 @@ class LibroForm(forms.ModelForm):
 	class Meta:
 		model = Libro
 		fields = '__all__'
+		labels = {
+			'titulo': 'título',
+			'fecha_publicacion': 'fecha de publicación',
+			'genero': 'género',
+			}
+		widgets = {
+			'fecha_publicacion': forms.DateInput(attrs={'type': 'date'}),
+		}
 
 class AutorForm(forms.ModelForm):
 	class Meta:
@@ -22,5 +30,5 @@ class IdiomaForm(forms.ModelForm):
 		fields = '__all__'
 
 class busquedaLibroForm(forms.Form):
-	titulo = forms.CharField(label='Titulo', max_length=100, required=False)
+	titulo = forms.CharField(label='Título', max_length=100, required=False)
 	autor = forms.ModelChoiceField(label='Autor', queryset=Autor.objects.all(), required=False)
