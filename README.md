@@ -11,6 +11,7 @@ Desarrollar una WEB Django con patrón MVT subida a Github.
 	4) Un formulario para buscar algo en la BD
 	5) Readme que indique el orden en el que se prueban las cosas y/o donde están las funcionalidades.
 ### Ejecución del proyecto:
-1) Ejecutar el proyecto en modo de desarrollo con python manage.py runserver
-2) Acceder a http://localhost:8000
-3) Todas las funcionalidades del proyecto se pueden probar desde su barra de navegación, excepto el formulario de búsqueda, disponible en todas las vistas en la barra lateral
+1) Ejecutar el comando python manage.py migrate para crear la base de datos
+2) Ejecutar el proyecto en modo de desarrollo con python manage.py runserver
+3) Acceder a http://localhost:8000
+4) Todas las funcionalidades del proyecto se pueden probar desde su barra de navegación, excepto el formulario de búsqueda, disponible en todas las vistas en la barra lateral
